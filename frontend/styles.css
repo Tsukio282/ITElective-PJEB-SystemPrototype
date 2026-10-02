@@ -1,0 +1,88 @@
+/* Colour system: near-black neutrals tinted toward the pink hue (about 330 degrees) so the dark
+   base and the pink accent read as one family. Roughly 60% base, 30% surfaces, 10% pink.
+   Pink carries every action; status colours (green, amber, coral) sit away from pink on the wheel
+   so they are not mistaken for brand colour. All pairs checked for WCAG AA (see ACCESSIBILITY_LOG.md). */
+:root {
+  color-scheme: dark;
+  --bg: #130b10; --surface: #1c121a; --surface-2: #281a23; --line: #3d2a36;
+  --ink: #fbeff4; --ink-2: #dcc3d0; --muted: #b99aab; --field: #9a7a8b;
+  --pink: #ff5c9d; --pink-hover: #ff85b5; --pink-dim: #3a1b2c; --on-pink: #1a0710;
+  --ok: #8cf0b5; --ok-bg: #12301f; --warn: #ffc56b; --warn-bg: #3a2a0c; --lock-bg: #2d2229;
+  --err: #ff8f6b;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--sans); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--pink); }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 2px; border-radius: 4px; }
+[hidden] { display: none !important; }
+
+.skip-link { position: absolute; left: 12px; top: -60px; background: var(--pink); color: var(--on-pink); font-weight: 600; padding: 10px 16px; border-radius: 8px; z-index: 10; }
+.skip-link:focus { top: 12px; outline-color: var(--ink); }
+
+.site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px clamp(16px, 4vw, 40px); background: var(--bg); border-bottom: 1px solid var(--line); }
+.brand { font: 600 22px/1 var(--serif); color: var(--pink); }
+.site-header nav { display: flex; gap: 20px; }
+.site-header nav a { color: var(--ink-2); font-weight: 500; text-decoration: none; padding: 8px 2px; }
+.site-header nav a:hover { color: var(--pink); text-decoration: underline; }
+
+main { display: grid; gap: 32px; padding-bottom: 56px; }
+main > section { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+.hero { width: 100% !important; background: radial-gradient(70% 140% at 88% 0%, #3a1630 0%, var(--bg) 62%); border-bottom: 1px solid var(--line); padding: clamp(36px, 7vw, 84px) clamp(16px, 6vw, 80px); display: grid; gap: 16px; justify-items: start; }
+.hero h1 { font-size: clamp(32px, 5vw, 54px); max-width: 20ch; }
+.hero p { color: var(--ink-2); max-width: 52ch; font-size: 18px; }
+
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-bottom: 20px; }
+.section-head h2 { font-size: clamp(26px, 3vw, 34px); }
+.section-head nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.section-head > p { color: var(--ink-2); }
+#result-count { flex-basis: 100%; color: var(--ink-2); font-size: 14px; }
+
+.filter { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--field); background: transparent; color: var(--ink); font: 600 14px var(--sans); cursor: pointer; }
+.filter:hover { border-color: var(--pink); color: var(--pink); }
+.filter[aria-pressed="true"] { background: var(--pink); border-color: var(--pink); color: var(--on-pink); }
+
+.event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.event-card { display: grid; gap: 8px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0 0 18px; overflow: hidden; }
+.event-card > :not(img) { padding-inline: 18px; }
+.event-card img { width: 100%; height: auto; display: block; margin-bottom: 8px; }
+.event-card h3 { font-size: 22px; }
+.meta { color: var(--ink-2); font-size: 14px; }
+.card-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+
+.pill { display: inline-block; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
+.pill-ok { color: var(--ok); background: var(--ok-bg); }
+.pill-warn { color: var(--warn); background: var(--warn-bg); }
+.pill-lock { color: var(--muted); background: var(--lock-bg); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 10px; border: 1.5px solid var(--pink); background: transparent; color: var(--pink); font: 600 15px var(--sans); text-decoration: none; cursor: pointer; }
+.btn:hover:not(:disabled) { background: var(--pink-dim); }
+.btn:disabled { border-color: var(--line); color: var(--muted); background: var(--surface-2); cursor: not-allowed; }
+.btn-primary { background: var(--pink); color: var(--on-pink); }
+.btn-primary:hover:not(:disabled) { background: var(--pink-hover); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(18px, 4vw, 32px); }
+form { max-width: 560px; display: grid; gap: 20px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 6px; }
+legend { font: 500 22px var(--serif); padding: 0; margin-bottom: 10px; }
+label { font-weight: 600; font-size: 15px; margin-top: 10px; }
+input[type="text"], input[type="email"], select { width: 100%; min-height: 46px; padding: 0 14px; font: 16px var(--sans); color: var(--ink); background: var(--bg); border: 1.5px solid var(--field); border-radius: 10px; }
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--err); border-width: 2px; }
+.hint { color: var(--muted); font-size: 14px; }
+.error { color: var(--err); font-size: 14px; font-weight: 600; }
+.error::before { content: "Error: "; }
+.check { display: flex; align-items: flex-start; gap: 12px; margin-top: 14px; }
+.check input { width: 24px; height: 24px; margin: 2px 0 0; flex: none; accent-color: var(--pink); }
+.check label { margin: 0; font-weight: 500; }
+.status:empty { display: none; }
+.status { padding: 12px 14px; border-radius: 10px; font-weight: 600; background: var(--ok-bg); color: var(--ok); }
+
+.site-footer { background: #0c070b; border-top: 1px solid var(--line); color: var(--ink-2); padding: 28px clamp(16px, 4vw, 40px); display: grid; gap: 6px; font-size: 14px; }
+
+@media (max-width: 600px) { .site-header nav { gap: 8px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

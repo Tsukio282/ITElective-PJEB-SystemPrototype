@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Events: Catalog and Registration</title>
+<meta name="description" content="Browse upcoming campus events and register your seat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <p class="brand">Campus Events</p>
+  <nav aria-label="Primary">
+    <a href="#events">Events</a>
+    <a href="#register">Register</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Find a campus event and save your seat.</h1>
+    <p>Browse what is coming up, pick one, and register in under a minute.</p>
+    <a class="btn btn-primary" href="#events">Browse events</a>
+  </section>
+
+  <section id="events" class="catalog" aria-labelledby="events-title">
+    <header class="section-head">
+      <h2 id="events-title">Upcoming events</h2>
+      <nav aria-label="Filter events by category">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="academic" aria-pressed="false">Academic</button>
+        <button type="button" class="filter" data-filter="career" aria-pressed="false">Career</button>
+        <button type="button" class="filter" data-filter="workshop" aria-pressed="false">Workshop</button>
+        <button type="button" class="filter" data-filter="social" aria-pressed="false">Social</button>
+      </nav>
+      <p id="result-count" role="status">Showing 4 of 4 events</p>
+    </header>
+
+    <section class="event-grid" aria-label="Event list">
+      <article class="event-card" data-id="research-congress" data-category="academic" data-seats="42" aria-labelledby="t-research">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160'%3E%3Crect width='400' height='160' fill='%232b1220'/%3E%3Ccircle cx='320' cy='80' r='46' fill='%23ff5c9d'/%3E%3C/svg%3E" alt="Placeholder banner art: a pink circle on a dark plum background" width="400" height="160">
+        <h3 id="t-research">Research Congress 2026</h3>
+        <p class="meta"><time datetime="2026-10-15T09:00">Thursday, October 15, 2026, 9:00 AM</time></p>
+        <p class="meta">Main Auditorium</p>
+        <p>Student teams present capstone and thesis work to faculty panels.</p>
+        <footer class="card-foot">
+          <span class="pill seats pill-ok">42 seats left</span>
+          <button type="button" class="btn register-btn" aria-label="Register for Research Congress 2026">Register</button>
+        </footer>
+      </article>
+
+      <article class="event-card" data-id="career-fair" data-category="career" data-seats="120" aria-labelledby="t-career">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160'%3E%3Crect width='400' height='160' fill='%233a1730'/%3E%3Crect x='270' y='34' width='92' height='92' fill='%23ff5c9d'/%3E%3C/svg%3E" alt="Placeholder banner art: a pink square on a dark plum background" width="400" height="160">
+        <h3 id="t-career">Career Fair and Alumni Meetup</h3>
+        <p class="meta"><time datetime="2026-10-28T10:00">Wednesday, October 28, 2026, 10:00 AM</time></p>
+        <p class="meta">University Gymnasium</p>
+        <p>Meet hiring partners and graduates working in IT and business.</p>
+        <footer class="card-foot">
+          <span class="pill seats pill-ok">120 seats left</span>
+          <button type="button" class="btn register-btn" aria-label="Register for Career Fair and Alumni Meetup">Register</button>
+        </footer>
+      </article>
+
+      <article class="event-card" data-id="ai-workshop" data-category="workshop" data-seats="3" aria-labelledby="t-ai">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160'%3E%3Crect width='400' height='160' fill='%23170a12'/%3E%3Cpath d='M270 126L316 34L362 126Z' fill='%23ff5c9d'/%3E%3C/svg%3E" alt="Placeholder banner art: a pink triangle on a near-black background" width="400" height="160">
+        <h3 id="t-ai">Hands-on Workshop: AI for IT Solutions</h3>
+        <p class="meta"><time datetime="2026-11-03T13:30">Tuesday, November 3, 2026, 1:30 PM</time></p>
+        <p class="meta">Computer Laboratory 3</p>
+        <p>Bring a laptop. Build a small prototype with an AI coding assistant.</p>
+        <footer class="card-foot">
+          <span class="pill seats pill-warn">Only 3 seats left</span>
+          <button type="button" class="btn register-btn" aria-label="Register for Hands-on Workshop: AI for IT Solutions">Register</button>
+        </footer>
+      </article>
+
+      <article class="event-card" data-id="cultural-night" data-category="social" data-seats="0" aria-labelledby="t-culture">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160'%3E%3Crect width='400' height='160' fill='%232b1220'/%3E%3Crect x='250' y='70' width='120' height='20' fill='%23ff5c9d'/%3E%3C/svg%3E" alt="Placeholder banner art: a pink horizontal bar on a dark plum background" width="400" height="160">
+        <h3 id="t-culture">Cultural Night</h3>
+        <p class="meta"><time datetime="2026-11-13T18:00">Friday, November 13, 2026, 6:00 PM</time></p>
+        <p class="meta">Open Quadrangle</p>
+        <p>Music, dance, and food from student organizations.</p>
+        <footer class="card-foot">
+          <span class="pill seats pill-lock">Event full</span>
+          <button type="button" class="btn register-btn" disabled>Event full</button>
+        </footer>
+      </article>
+    </section>
+  </section>
+
+  <section id="register" class="panel" aria-labelledby="register-title">
+    <header class="section-head">
+      <h2 id="register-title">Register for an event</h2>
+      <p>Fields marked with an asterisk (*) are required.</p>
+    </header>
+
+    <form id="reg-form" novalidate>
+      <fieldset>
+        <legend>Your details</legend>
+
+        <label for="fullName">Full name <span aria-hidden="true">*</span></label>
+        <input type="text" id="fullName" name="fullName" autocomplete="name" required aria-required="true" aria-label="Full name" aria-describedby="fullName-error">
+        <p class="error" id="fullName-error" hidden></p>
+
+        <label for="studentEmail">Student email <span aria-hidden="true">*</span></label>
+        <input type="email" id="studentEmail" name="studentEmail" autocomplete="email" required aria-required="true" aria-label="Student email" aria-describedby="studentEmail-hint studentEmail-error">
+        <p class="hint" id="studentEmail-hint">We send your confirmation here.</p>
+        <p class="error" id="studentEmail-error" hidden></p>
+
+        <label for="program">Program <span aria-hidden="true">*</span></label>
+        <select id="program" name="program" required aria-required="true" aria-label="Program" aria-describedby="program-error">
+          <option value="">Choose your program</option>
+          <option>BS Information Technology</option>
+          <option>BS Computer Science</option>
+          <option>BS Information Systems</option>
+          <option>Other program</option>
+        </select>
+        <p class="error" id="program-error" hidden></p>
+
+        <label for="eventId">Event <span aria-hidden="true">*</span></label>
+        <select id="eventId" name="eventId" required aria-required="true" aria-label="Event" aria-describedby="eventId-error">
+          <option value="">Choose an event</option>
+          <option value="research-congress">Research Congress 2026</option>
+          <option value="career-fair">Career Fair and Alumni Meetup</option>
+          <option value="ai-workshop">Hands-on Workshop: AI for IT Solutions</option>
+          <option value="cultural-night" disabled>Cultural Night (full)</option>
+        </select>
+        <p class="error" id="eventId-error" hidden></p>
+
+        <p class="check">
+          <input type="checkbox" id="consent" name="consent" required aria-required="true" aria-describedby="consent-error">
+          <label for="consent">I agree to share my name and email with the event organizers. <span aria-hidden="true">*</span></label>
+        </p>
+        <p class="error" id="consent-error" hidden></p>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary">Register for event</button>
+      <p id="form-status" class="status" role="status" tabindex="-1"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Campus Event Management System prototype. Sample data only.</p>
+  <p>Need help registering? Contact the Student Affairs Office.</p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
